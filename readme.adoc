@@ -1,0 +1,40 @@
+= Jenkins Docker (Debian)
+
+== Introduction
+ClassicDriver Docker containers environment for Jenkins (Master)
+
+== Name/Tag
+The naming strategy will be <organisation>/<feature>:<version-tag>.
+The 'version-tag' is optional
+....
+classicdriver/jenkins:1.609.2
+....
+
+== How to BUILD this image
+. Clone the Git repository
++
+....
+git clone http://<git.host>/docker-jenkins.git
+....
+. Browse to the cloned repository
++
+....
+cd <parent-folder>
+....
+. Build the docker image with the command
++
+....
+docker build --rm=true --tag=classicdriver/jenkins:1.609.2 docker-jenkins/.
+....
+. Test the docker image by running the command
++
+....
+docker run --rm=true --name=jenkins-master classicdriver/jenkins:1.609.2
+....
+. To verify the container is running
+. Execute
++
+....
+docker ps
+....
+A container named _jenkins-master_ should be part of the listed running containsers
